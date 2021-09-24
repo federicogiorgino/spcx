@@ -5,42 +5,39 @@ import { StackNavigationProp } from "@react-navigation/stack";
 
 import DrawerButton from "../components/DrawerButton";
 
-import RocketsScreen from "../screens/RocketsScreen";
-import RocketDetailsScreen from "../screens/RocketDetailsScreen";
+import PadsScreen from "../screens/PadsScreen";
+import PadDetailsScreen from "../screens/PadDetailsScreen";
 import TextLogo from "../components/TextLogo";
 
 const Stack = createStackNavigator();
 
-export type RocketsStackParams = {
-  RocketsScreen: undefined;
-  RocketDetailsScreen: { id: string };
+export type PadsStackParams = {
+  PadsScreen: undefined;
+  PadDetailsScreen: { id: string };
 };
 
-export type RocketsStackNavProps<T extends keyof RocketsStackParams> = {
-  navigation: StackNavigationProp<RocketsStackParams, T>;
-  route: RouteProp<RocketsStackParams, T>;
+export type PadsStackNavProps<T extends keyof PadsStackParams> = {
+  navigation: StackNavigationProp<PadsStackParams, T>;
+  route: RouteProp<PadsStackParams, T>;
 };
 
-export const RocketsStack = () => {
+export const PadsStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="RocketsScreen"
+      initialRouteName="PadsScreen"
       screenOptions={{
         headerTitle: () => <TextLogo />,
         headerBackTitleVisible: false,
       }}
     >
       <Stack.Screen
-        name="RocketsScreen"
-        component={RocketsScreen}
+        name="PadsScreen"
+        component={PadsScreen}
         options={{
           headerLeft: () => <DrawerButton />,
         }}
       />
-      <Stack.Screen
-        name="RocketDetailsScreen"
-        component={RocketDetailsScreen}
-      />
+      <Stack.Screen name="PadDetailsScreen" component={PadDetailsScreen} />
     </Stack.Navigator>
   );
 };

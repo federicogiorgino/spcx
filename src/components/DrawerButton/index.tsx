@@ -10,7 +10,7 @@ const DrawerButton = () => {
       name="menu"
       size={24}
       style={{ marginHorizontal: 10 }}
-      color={colors.text}
+      color={colors.primary}
       onPress={() => navigation.openDrawer()}
     />
   );

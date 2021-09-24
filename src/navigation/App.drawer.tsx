@@ -1,14 +1,18 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 
-import { RocketStack } from "./Rockets.stack";
+import { RocketsStack } from "./Rockets.stack";
+import { LaunchesStack } from "./Launches.stack";
+import { PadsStack } from "./Pads.stack";
 
 const Drawer = createDrawerNavigator();
 
 export const AppDrawer = () => {
   return (
     <Drawer.Navigator screenOptions={{ headerShown: false }}>
-      <Drawer.Screen name="RocketStack" component={RocketStack} />
+      <Drawer.Screen name="RocketsStack" component={RocketsStack} />
+      <Drawer.Screen name="LaunchesStack" component={LaunchesStack} />
+      <Drawer.Screen name="PadsStack" component={PadsStack} />
     </Drawer.Navigator>
   );
 };
