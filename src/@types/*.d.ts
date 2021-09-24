@@ -8,6 +8,8 @@ declare module "@react-navigation/native" {
       primary: string;
       background: string;
       text: string;
+      surface: string;
+      icon: string;
     };
   };
   export function useTheme(): ExtendedTheme;

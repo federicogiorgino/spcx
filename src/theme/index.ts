@@ -17,6 +17,7 @@ export const CustomDefaultTheme: ExtendedTheme = {
     background: "#FFFFFF",
     text: "#333333",
     primary: "#0F2F64",
+    icon: "#757575",
   },
 };
 
@@ -28,6 +29,8 @@ export const CustomDarkTheme: ExtendedTheme = {
     ...PaperDarkTheme.colors,
     background: "#070707",
     text: "#f5f5f5",
-    primary: "#0F2F64",
+    primary: "#005288",
+    surface: "#090909",
+    icon: "#ACACAC",
   },
 };

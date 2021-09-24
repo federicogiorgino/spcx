@@ -9,8 +9,9 @@ import {
   Feather,
   MaterialCommunityIcons,
   MaterialIcons,
+  Entypo,
 } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useTheme } from "@react-navigation/native";
 
 import Logo from "../Logo";
 import { ThemeContext } from "../../context/Theme.context";
@@ -18,6 +19,7 @@ import { styles } from "./styles";
 
 const DrawerContent = () => {
   const navigation = useNavigation<any>();
+  const { colors } = useTheme();
   const { isDarkTheme, switchTheme } = useContext(ThemeContext);
 
   return (
@@ -40,7 +42,11 @@ const DrawerContent = () => {
             <DrawerItem
               label="Dashboard"
               icon={({ color, size }) => (
-                <Ionicons name="md-home-outline" size={size} color={color} />
+                <Ionicons
+                  name="md-home-outline"
+                  size={size}
+                  color={colors.icon}
+                />
               )}
               onPress={() => {
                 navigation.navigate("DashboardStack");
@@ -49,7 +55,11 @@ const DrawerContent = () => {
             <DrawerItem
               label="Launches"
               icon={({ color, size }) => (
-                <Ionicons name="md-rocket-outline" size={size} color={color} />
+                <Ionicons
+                  name="md-rocket-outline"
+                  size={size}
+                  color={colors.icon}
+                />
               )}
               onPress={() => {
                 navigation.navigate("LaunchesStack");
@@ -61,7 +71,7 @@ const DrawerContent = () => {
                 <MaterialCommunityIcons
                   name="rocket-outline"
                   size={size}
-                  color={color}
+                  color={colors.icon}
                 />
               )}
               onPress={() => {
@@ -74,7 +84,7 @@ const DrawerContent = () => {
                 <MaterialIcons
                   name="workspaces-outline"
                   size={size}
-                  color={color}
+                  color={colors.icon}
                 />
               )}
               onPress={() => {
@@ -83,20 +93,24 @@ const DrawerContent = () => {
             />
           </Drawer.Section>
 
-          <Drawer.Section title="About" style={styles.drawerSection}>
+          <Drawer.Section title="Infos" style={styles.drawerSection}>
             <DrawerItem
               label="SpaceX"
               icon={({ color, size }) => (
-                <Feather name="x-circle" size={size} color={color} />
+                <Feather name="x-circle" size={size} color={colors.icon} />
               )}
               onPress={() => {
-                navigation.navigate("AboutScreen");
+                navigation.navigate("CompanyScreen");
               }}
             />
             <DrawerItem
               label="History"
               icon={({ color, size }) => (
-                <Ionicons name="md-time-outline" size={size} color={color} />
+                <Ionicons
+                  name="md-time-outline"
+                  size={size}
+                  color={colors.icon}
+                />
               )}
               onPress={() => {
                 navigation.navigate("HistoryScreen");
@@ -106,10 +120,27 @@ const DrawerContent = () => {
 
           <Drawer.Section title="Preferences" style={styles.drawerSection}>
             <View style={styles.preference}>
-              <Text>Dark Mode</Text>
+              <Entypo name="light-up" size={24} color={colors.icon} />
+              <Text style={{ color: colors.icon, fontWeight: "600" }}>
+                Dark Mode
+              </Text>
               <View pointerEvents="none" />
-              <Switch value={isDarkTheme} onValueChange={() => switchTheme()} />
+              <Switch
+                value={isDarkTheme}
+                onValueChange={() => switchTheme()}
+                color={colors.primary}
+              />
             </View>
+
+            <DrawerItem
+              label="About"
+              icon={({ color, size }) => (
+                <Feather name="info" size={size} color={colors.icon} />
+              )}
+              onPress={() => {
+                navigation.navigate("AboutScreen");
+              }}
+            />
           </Drawer.Section>
         </View>
       </DrawerContentScrollView>

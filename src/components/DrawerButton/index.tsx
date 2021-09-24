@@ -8,7 +8,7 @@ const DrawerButton = () => {
   return (
     <Entypo
       name="menu"
-      size={24}
+      size={28}
       style={{ marginHorizontal: 10 }}
       color={colors.primary}
       onPress={() => navigation.openDrawer()}
