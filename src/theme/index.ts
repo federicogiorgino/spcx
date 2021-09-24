@@ -16,7 +16,7 @@ export const CustomDefaultTheme: ExtendedTheme = {
     ...PaperDefaultTheme.colors,
     background: "#FFFFFF",
     text: "#333333",
-    primary: "#5F266D",
+    primary: "#0F2F64",
   },
 };
 
@@ -26,8 +26,8 @@ export const CustomDarkTheme: ExtendedTheme = {
   colors: {
     ...DarkTheme.colors,
     ...PaperDarkTheme.colors,
-    background: "#090909",
+    background: "#070707",
     text: "#f5f5f5",
-    primary: "#F9D335",
+    primary: "#0F2F64",
   },
 };
