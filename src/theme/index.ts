@@ -30,7 +30,7 @@ export const CustomDarkTheme: ExtendedTheme = {
     background: "#070707",
     text: "#f5f5f5",
     primary: "#005288",
-    surface: "#090909",
+    surface: "#111111",
     icon: "#ACACAC",
   },
 };

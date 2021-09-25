@@ -70,9 +70,7 @@ const CompanyScreen: FC = () => {
         </Text>
 
         <Spacer y={30} />
-
         <Text style={styles.summaryText}>{companyInfos?.summary}</Text>
-
         <Spacer y={30} />
 
         <View style={styles.labelValueRow}>
